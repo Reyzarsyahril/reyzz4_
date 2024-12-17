@@ -1,0 +1,108 @@
+/* stylelogin.css */
+
+/* Reset default styles */
+body, h2, p, label, input, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    font-family: 'Roboto', sans-serif; /* Menggunakan font yang modern */
+    background-color: #f4f4f4; /* Warna latar belakang */
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Mengisi tinggi viewport */
+    position: relative;
+}
+
+/* Background image styles */
+.bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Menempatkan gambar di belakang konten */
+    object-fit: cover; /* Memastikan gambar menutupi area */
+}
+
+/* Login container styles */
+.login-container {
+    background: rgba(255, 255, 255, 0.9); /* Latar belakang putih dengan transparansi */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    width: 300px; /* Lebar tetap untuk kontainer */
+    text-align: center; /* Memusatkan teks */
+}
+
+/* Heading styles */
+h2 {
+    margin-bottom: 20px;
+    color: #333; /* Warna hijau untuk judul */
+}
+
+/* Input group styles */
+.input-group {
+    margin-bottom: 15px;
+    text-align: left; /* Rata kiri untuk label */
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555; /* Warna label yang lebih lembut */
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%; /* Lebar penuh */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s; /* Transisi halus */
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border-color: #333; /* Warna border saat fokus */
+    outline: none; /* Menghilangkan outline default */
+}
+
+/* Button styles */
+button {
+    padding: 10px;
+    background-color: #333; /* Warna tombol */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%; /* Lebar penuh */
+    transition: background-color 0.3s, transform 0.2s; /* Transisi halus */
+}
+
+button:hover {
+    background-color: #333; /* Warna lebih gelap saat hover */
+    transform: translateY(-2px); /* Efek angkat saat hover */
+}
+
+/* Back link styles */
+.back-link {
+    display: inline-block;
+    margin-top: 10px;
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s; /* Transisi halus */
+}
+
+.back-link:hover {
+    color: #555; /* Warna lebih gelap saat hover */
+}

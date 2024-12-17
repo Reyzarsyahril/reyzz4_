@@ -1,0 +1,186 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #3e2723; /* Warna coklat gelap */
+    background-color: #f8f4e3; /* Warna latar belakang krem */
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    background-color: #6f4c3e; /* Warna coklat kopi */
+    color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.navbar .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+}
+
+.navbar ul li {
+    margin-left: 20px;
+}
+
+.navbar ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.navbar ul li a:hover {
+    color: #d4a373; /* Warna emas saat hover */
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px 10%;
+    background-color: #3e2723; /* Warna coklat gelap */
+    color: #fff;
+    border-bottom: 5px solid #d4a373; /* Garis bawah emas */
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.hero-content p {
+    margin: 20px 0;
+}
+
+.hero .button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #d4a373; /* Warna emas */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.hero .button:hover {
+    background-color: #c69c5a; /* Warna emas lebih gelap saat hover */
+}
+
+.hero .hero-image img {
+    width: 200px;
+}
+
+/* Features Section */
+.features {
+    display: flex;
+    justify-content: space-around;
+    padding: 50px 10%;
+    background-color: #f5f5f5; /* Warna latar belakang terang */
+}
+
+.feature-item {
+    text-align: center;
+    max-width: 200px;
+    padding: 1%;
+}
+
+.feature-item img {
+    width: 50px;
+    margin-bottom: 15px;
+}
+
+/* About Section */
+.about {
+    display: flex;
+    align-items: center;
+    padding: 50px 10%;
+    background-color: #fff; /* Warna latar belakang putih */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.about img {
+    width: 300px;
+    margin-right: 20px;
+    border-radius: 10px; /* Sudut melengkung untuk gambar */
+}
+
+.about-content h2 {
+    font-size: 36px;
+    color: #6f4c3e; /* Warna coklat kopi */
+}
+
+.about .button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #d4a373; /* Warna emas */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: background 0.3s;
+}
+
+.about .button:hover {
+    background-color: #c69c5a; /* Warna emas lebih gelap saat hover */
+}
+
+@media (max-width : 768px) {
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+    }
+    .navbar ul {
+        flex-direction: column;
+        margin-top: 10px;
+    }
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero-content h1 {
+        font-size: 28px;
+    }
+    .hero .hero-image img {
+        max-width: 150px;
+    }
+    .features {
+        flex-direction: column;
+        text-align: center;
+    }
+    .feature-item {
+        max-width: 100%;
+    }
+    .about {
+        flex-direction: column;
+    }
+    .about img {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+}
+
+@media (min-width : 1024px) {
+    .hero-content h1 {
+        font-size: 48px;
+    }
+    .navbar .logo {
+        font-size: 24px;
+    }
+    .features {
+        justify-content: space-between;
+    }
+}

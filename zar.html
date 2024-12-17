@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Program Pembayaran</title>
+    <link rel="stylesheet" href="pem.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Program Pembayaran</h1>
+
+        <!-- Form Pembayaran -->
+        <form id="paymentForm">
+            <label for="name">Nama Pelanggan:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="phone">Nomor HP:</label>
+            <input type="number" id="phone" name="phone" required>
+
+            <label for="totalPrice">Jumlah Pembelian:</label>
+            <input type="number" id="totalPrice" name="totalPrice" required>
+
+            <label for="paymentMethod">Metode Pembayaran:</label>
+            <select id="paymentMethod" name="paymentMethod" required>
+                <option value="cash">Tunai</option>
+                <option value="qris">Qris</option>
+                <option value="transfer">Transfer Bank</option>
+            </select>
+
+            <button type="submit">Bayar</button>
+            <a href="loginpage.html" class="back-link">Kembali</a>
+        </form>
+
+        <!-- Menampilkan Struk Pembayaran -->
+        <div id="receipt" style="display: none;">
+            <h2>Struk Pembayaran</h2>
+            <p><strong>ID Pembayaran:</strong> <span id="paymentId"></span></p>
+            <p><strong>Nama Pelanggan:</strong> <span id="receiptName"></span></p>
+            <p><strong>Nomor HP:</strong> <span id="receiptPhone"></span></p>
+            <p><strong>Jumlah Pembelian:</strong> <span id="receiptTotalPrice"></span></p>
+            <p><strong>Metode Pembayaran:</strong> <span id="receiptPaymentMethod"></span></p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('paymentForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Ambil data dari form
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const totalPrice = document.getElementById('totalPrice').value;
+            const paymentMethod = document.getElementById('paymentMethod').value;
+
+            // Buat ID pembayaran otomatis
+            const paymentId = 'PAY' + Math.floor(100000 + Math.random() * 900000);
+
+            // Data pembayaran
+            const paymentData = {
+                id: paymentId,
+                name: name,
+                phone: phone,
+                totalPrice: parseFloat(totalPrice).toLocaleString('id-ID'),
+                paymentMethod: paymentMethod.charAt(0).toUpperCase() + paymentMethod.slice(1)
+            };
+            // Tampilkan struk pembayaran
+            document.getElementById('paymentId').innerText = paymentData.id;
+            document.getElementById('receiptName').innerText = paymentData.name;
+            document.getElementById('receiptPhone').innerText = paymentData.phone;
+            document.getElementById('receiptTotalPrice').innerText = paymentData.totalPrice;
+            document.getElementById('receiptPaymentMethod').innerText = paymentData.paymentMethod;
+
+            document.getElementById('receipt').style.display = 'block';
+
+            // Reset form
+            document.getElementById('paymentForm').reset();
+        });
+    </script>
+</body>
+</html>
